@@ -8,8 +8,8 @@
 %
 % Has been modified to fit my needs for attacking jpeg encrypted data
 %
-function AttackShiftJPG(x)
-pdf = Generatepdf();
+function AttackShiftJPG(x, y)
+pdf = Generatepdf(size(y,2));
 % file = fopen('nia_yoko.jpg', 'r');
 % bytes = fread(file);
 % [pdf, edges] = histcounts(bytes, 256, 'Normalization', 'probability');

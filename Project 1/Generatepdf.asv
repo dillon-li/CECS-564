@@ -6,15 +6,10 @@ function [ N ] = Generatepdf(b)
 
 filenames = dir('sample_images');
 filenames = filenames(3:end);
-loopsize = size(filenames);
-% Use size to remove some less reliable jpg info
-for i = loopsize:1
+for i = 1:size(filenames)
     low = b - 8000;
     high = b + 8000;
-    if (filenames(i).bytes < low)||(filenames(i).bytes > high)
-        filenames(i,:) = [];
-    end
-end
+    if (filenames.bytes < low)
 
 for i = 1:size(filenames)
     f = [pwd '/sample_images/' filenames(i).name]; % filepath
